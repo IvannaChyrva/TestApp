@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Add new facility";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add new facility</title>
+</head>
+<body>
+    <div>
+        <h3>Add facility</h3>
+        <p>To add new facility set the following fields and press 'OK'</p>
+        <form method="post">
+            <input type="hidden" />
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="PhoneNumber" /></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="Email" /></td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><input type="text" name="FacilityStatusId" /></td>
+                </tr>
+                <tr><td><input type="submit" value="OK" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

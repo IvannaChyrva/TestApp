@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit facility</title>
+</head>
+<body>
+    <div>
+        <h3>Edit facility '@ViewBag.Facility.Name':</h3>
+        <p>To edit facility change the following fields and press 'OK'</p>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.Facility.FacilityId" name="FacilityId" />
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="Name" value="@ViewBag.Facility.Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="Address" value="@ViewBag.Facility.Address" /></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="PhoneNumber" value="@ViewBag.Facility.PhoneNumber" /></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="Email" value="@ViewBag.Facility.Email" /></td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><input type="text" name="FacilityStatusId" value="@ViewBag.Facility.FacilityStatusId" /></td>
+                </tr>
+                <tr><td><input type="submit" value="OK" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
