@@ -1,4 +1,6 @@
-﻿@model IEnumerable<TestApp.Models.Facility>
+﻿@model X.PagedList.IPagedList<TestApp.Models.Facility>
+@using X.PagedList.Mvc.Core;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewData["Title"] = "Facilities";
 }
@@ -16,15 +18,19 @@
         </tr>
         @foreach (var facility in Model)
         {
-    <tr>
-        <td>@facility.Name</td>
-        <td>@facility.Address</td>
-        <td>@facility.PhoneNumber</td>
-        <td>@facility.Email</td>
-        <td>@facility.FacilityStatusId</td>
-        <td><a href="~/Home/Edit/@facility.FacilityId">Edit</a></td>
-        <td><a href="~/Home/Remove/@facility.FacilityId">Remove</a></td>
-    </tr>
+            <tr>
+                <td>@facility.Name</td>
+                <td>@facility.Address</td>
+                <td>@facility.PhoneNumber</td>
+                <td>@facility.Email</td>
+                <td>@facility.FacilityStatusId</td>
+                <td><a href="~/Home/Edit/@facility.FacilityId">Edit</a></td>
+                <td><a href="~/Home/Remove/@facility.FacilityId">Remove</a></td>
+            </tr>
         }
     </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 </div>

@@ -3,11 +3,13 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Linq;
 using TestApp.Models;
+using X.PagedList;
 
 namespace TestApp.Controllers
 {
     public class HomeController : Controller
     {
+        const int PageSize = 10;
         private readonly ILogger<HomeController> _logger;
         private FacilityContext _db;
 
@@ -17,9 +19,9 @@ namespace TestApp.Controllers
             _db = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_db.Facilities.ToList());
+            return View(_db.Facilities.ToPagedList(page, PageSize));
         }
 
         [HttpGet]
